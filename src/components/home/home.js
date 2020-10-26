@@ -7,13 +7,15 @@ class Home extends Component {
     document.body.style.backgroundColor = "#80808040";
   }
   render() { 
+    const {year,landing,launch} =this.props.match.params ;
+  
     return (
       <div className="App">
         <header className="App-header">
-          <b>SpaceX Launch Programsssss</b>
+          <b>SpaceX Launch Programs</b>
         </header>
-        <Filters />
-        <Launches />
+        <Filters year={year} launch={launch} landing={landing}/>
+        <Launches year={year} launch={launch} landing={landing}/>
         <footer>
           <b>Developed by:</b>
           <p className="developerName">Kyathi Kanumuri</p>

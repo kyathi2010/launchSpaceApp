@@ -1,8 +1,19 @@
 import React, { Component } from "react";
 import "./launches.css";
 import { connect } from "react-redux";
+import { fetchSelectedYearData,fetchAllData } from '../../actions/launchAction';
 import Loader from "../loader";
 class Launches extends Component {
+  componentDidMount(){
+    let {year,launch,landing} = this.props;
+    year = year === "undefined" ? undefined : year;
+    launch = launch === "undefined" ? undefined : launch;
+    landing = landing === "undefined" ? undefined : landing;
+    this.props.fetchSelectedYearData(year,landing,launch); 
+    if(!year && !launch && !landing) {
+      this.props.fetchAllData();
+    }
+  }
   render() {
     
     const {  launches } = this.props;
@@ -62,4 +73,8 @@ export const mapStateToProps = (state, ownProps) => {
 		launches: state.launches
 	};
 };
-export default connect(mapStateToProps)(Launches);
+const mapDispatchToProps = {
+  fetchSelectedYearData,
+  fetchAllData
+ };
+export default connect(mapStateToProps,mapDispatchToProps)(Launches);

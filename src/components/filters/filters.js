@@ -3,7 +3,7 @@ import './filters.css';
 import { fetchSelectedYearData,fetchSelectedLandingData } from '../../actions/launchAction';
 import { connect } from 'react-redux';
 import {
-  Link
+  withRouter
 } from 'react-router-dom';
 class Filters extends Component {
  
@@ -16,11 +16,23 @@ class Filters extends Component {
     }
    
   }
+  componentDidMount(){
+    let {year,launch,landing} = this.props;
+    year = year === "undefined" ? undefined : year;
+    launch = launch === "undefined" ? undefined : launch;
+    landing = landing === "undefined" ? undefined : landing;
+    this.setState({
+      selectedYearButton:year,
+      selectedLaunchToggle:launch,
+      selectedLandingToggle:landing
+    });
+  }
   yearFilterClicked(event) {
     this.setState({
       selectedYearButton :event.target.dataset.value
     });
     this.props.fetchSelectedYearData(event.target.dataset.value,this.state.selectedLandingToggle,this.state.selectedLaunchToggle); 
+    this.props.history.push("/"+event.target.dataset.value+"/"+this.state.selectedLaunchToggle+"/"+this.state.selectedLandingToggle);
   }
   launchFilterClicked(event) {
     this.props.fetchSelectedYearData(this.state.selectedYearButton,this.state.selectedLandingToggle,event.target.dataset.value);
@@ -28,7 +40,7 @@ class Filters extends Component {
     this.setState({
       selectedLaunchToggle :event.target.dataset.value
     });
-    
+    this.props.history.push("/"+this.state.selectedYearButton+"/"+event.target.dataset.value+"/"+this.state.selectedLandingToggle);
   }
   landingFilterClicked(event) {
     this.props.fetchSelectedYearData(this.state.selectedYearButton,event.target.dataset.value,this.state.selectedLaunchToggle);
@@ -36,7 +48,7 @@ class Filters extends Component {
     this.setState({
       selectedLandingToggle :event.target.dataset.value
     });
-    
+    this.props.history.push("/"+this.state.selectedYearButton+"/"+this.state.selectedLaunchToggle+"/"+event.target.dataset.value);
   }
   
   render() {
@@ -52,7 +64,7 @@ class Filters extends Component {
           <div className="yearFilters">
             {
                 years.map((year,index)=>(
-                  <Link to="filterYear"  data-value={year} key={index} className={parseInt(this.state.selectedYearButton) === year ?"selectedYear":"notSelected"} onClick={this.yearFilterClicked.bind(this)}>{year}</Link>
+                  <div  data-value={year} key={index} className={parseInt(this.state.selectedYearButton) === year ?"selectedYear":"notSelected"} onClick={this.yearFilterClicked.bind(this)}>{year}</div>
                 ))
             }
           </div>
@@ -61,7 +73,7 @@ class Filters extends Component {
            <div className="successLaunchFilters">
             {
                 boolValues.map((value,index)=>(
-                  <Link to="filterLaunch" params={{ selectedLaunchToggle: value }} data-value={value} key={index} className={this.state.selectedLaunchToggle === value.toString() ?"selectedYear":"notSelected"} onClick={this.launchFilterClicked.bind(this)}>{value?"True":"False"}</Link>
+                  <div  params={{ selectedLaunchToggle: value }} data-value={value} key={index} className={this.state.selectedLaunchToggle === value.toString() ?"selectedYear":"notSelected"} onClick={this.launchFilterClicked.bind(this)}>{value?"True":"False"}</div>
                 ))
             }
           </div>
@@ -70,7 +82,7 @@ class Filters extends Component {
            <div className="successLandFilters">
             {
                 boolValues.map((value,index)=>(
-                  <Link  to="filterLanding" params={{ selectedLandingToggle: value }} data-value={value} key={index} className={this.state.selectedLandingToggle === value.toString() ?"selectedYear":"notSelected"} onClick={this.landingFilterClicked.bind(this)}>{value?"True":"False"}</Link>
+                  <div  params={{ selectedLandingToggle: value }} data-value={value} key={index} className={this.state.selectedLandingToggle === value.toString() ?"selectedYear":"notSelected"} onClick={this.landingFilterClicked.bind(this)}>{value?"True":"False"}</div>
                 ))
             }
           </div>
@@ -85,4 +97,4 @@ const mapDispatchToProps = {
   fetchSelectedLandingData
  };
  
-export default connect(null,mapDispatchToProps)(Filters);
+export default withRouter(connect(null,mapDispatchToProps)(Filters));

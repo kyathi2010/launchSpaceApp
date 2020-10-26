@@ -4,32 +4,33 @@
   padding-bottom: 70px;
 }
 .launchYear {
-    text-align: center;
-    margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 10px;
 }
-.launchYear p{
-    width: 150px;
-    margin: auto;
-    border-bottom: solid 1px #80808040;
+.launchYear p {
+  width: 150px;
+  margin: auto;
+  border-bottom: solid 1px #80808040;
 }
-a {
-    width: 30%;
-    margin-left: 10%;
-    margin-bottom: 15px;
-    background: #b9efb9;
-    border:none;
-    border-radius: 3px;
-    padding: 4px;
-    text-decoration: none;
-    color: #000;
-    display:inline-block;
-    text-align: center;
+.notSelected,
+.selectedYear {
+  width: 30%;
+  margin-left: 10%;
+  margin-bottom: 15px;
+  background: #b9efb9;
+  border: none;
+  border-radius: 3px;
+  padding: 4px;
+  text-decoration: none;
+  color: #000;
+  display: inline-block;
+  text-align: center;
 }
 .selectedYear {
-    background:#3ab53a;
-    border: none;
+  background: #3ab53a;
+  border: none;
 }
-a:active{
+a:active {
   color: #000;
   border: none;
 }
