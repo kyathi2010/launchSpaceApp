@@ -32,7 +32,7 @@ class Filters extends Component {
       selectedYearButton :event.target.dataset.value
     });
     this.props.fetchSelectedYearData(event.target.dataset.value,this.state.selectedLandingToggle,this.state.selectedLaunchToggle); 
-    this.props.history.push("/"+event.target.dataset.value+"/"+this.state.selectedLaunchToggle+"/"+this.state.selectedLandingToggle);
+    this.props.history.push("/launchSpaceApp/"+event.target.dataset.value+"/"+this.state.selectedLaunchToggle+"/"+this.state.selectedLandingToggle);
   }
   launchFilterClicked(event) {
     this.props.fetchSelectedYearData(this.state.selectedYearButton,this.state.selectedLandingToggle,event.target.dataset.value);
@@ -40,7 +40,7 @@ class Filters extends Component {
     this.setState({
       selectedLaunchToggle :event.target.dataset.value
     });
-    this.props.history.push("/"+this.state.selectedYearButton+"/"+event.target.dataset.value+"/"+this.state.selectedLandingToggle);
+    this.props.history.push("/launchSpaceApp/"+this.state.selectedYearButton+"/"+event.target.dataset.value+"/"+this.state.selectedLandingToggle);
   }
   landingFilterClicked(event) {
     this.props.fetchSelectedYearData(this.state.selectedYearButton,event.target.dataset.value,this.state.selectedLaunchToggle);
@@ -48,7 +48,7 @@ class Filters extends Component {
     this.setState({
       selectedLandingToggle :event.target.dataset.value
     });
-    this.props.history.push("/"+this.state.selectedYearButton+"/"+this.state.selectedLaunchToggle+"/"+event.target.dataset.value);
+    this.props.history.push("/launchSpaceApp/"+this.state.selectedYearButton+"/"+this.state.selectedLaunchToggle+"/"+event.target.dataset.value);
   }
   
   render() {

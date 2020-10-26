@@ -7,8 +7,8 @@ export default class AppRoute extends React.Component {
       
 	   <Router>
 	   <Switch>
-        <Route  path="/:year?/:launch?/:landing?" component={Home} />
-        <Route  exact path="/" component={Home} />
+        <Route  path="/launchSpaceApp/:year?/:launch?/:landing?" component={Home} />
+        <Route  exact path="/launchSpaceApp" component={Home} />
 	   </Switch>
 			  
 	   </Router>
