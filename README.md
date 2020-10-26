@@ -66,3 +66,14 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+### Project Details
+1)On click of filters, an action is dispatched . The data is fetched from the API using axios ajax request and the reducer returns this new data to display on the UI.
+2)On clicking on each of the filters, actions are dispatched which call the respective API urls to render the data.
+3)Media queries and CSS is used to render the UI similar to the VD shared.
+4)The proejct is hosted on gh pages and the URL is as below:
+http://kyathi2010.github.io/launchSpaceApp
+5)Lighthouse performance score is shared as a screenshot attachment in the email sent. 
+6)Unit tests  included.
+7)Eslint checks for code quality checks and fails the build for any rules mentioned in eslintrc.json.
