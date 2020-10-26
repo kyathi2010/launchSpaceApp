@@ -17,10 +17,14 @@ export const fetchAllData =  () => {
         }
     }
 }
-export const fetchSelectedYearData =  (selectedYear) => {
+export const fetchSelectedYearData =  (selectedYear,selectedLanding,selectedLaunch) => {
     return async dispatch => {
         try {
-            let launchData = await axios.get('https://api.spacexdata.com/v3/launches?limit=100&launch_success=true&land_success=true&launch_year='+selectedYear)
+            let landSelected = selectedLanding === undefined ? "" : "&land_success="+selectedLanding;
+            let launchSelected = selectedLaunch === undefined ? "" : "&launch_success="+selectedLaunch;
+            let yearSelected = selectedYear === undefined? "" : "&launch_year="+selectedYear;
+            let launchData = await axios.get('https://api.spacexdata.com/v3/launches?limit=100'+landSelected+launchSelected+yearSelected);
+            console.log('urlllll is '+'https://api.spacexdata.com/v3/launches?limit=100'+landSelected+launchSelected+yearSelected);
             dispatch({
 				type: 'FETCH_DATA_SUCCESS',
 				payload: { launchData }

@@ -6,7 +6,7 @@ class Home extends Component {
   componentDidMount(){
     document.body.style.backgroundColor = "#80808040";
   }
-  render() {
+  render() { 
     return (
       <div className="App">
         <header className="App-header">
@@ -24,3 +24,4 @@ class Home extends Component {
 }
 
 export default Home;
+

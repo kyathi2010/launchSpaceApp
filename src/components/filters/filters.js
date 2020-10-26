@@ -10,9 +10,9 @@ class Filters extends Component {
   constructor(props){
     super(props);
     this.state={
-      selectedYearButton :"",
-      selectedLaunchToggle :"",
-      selectedLandingToggle :""
+      selectedYearButton :undefined,
+      selectedLaunchToggle :undefined,
+      selectedLandingToggle :undefined
     }
    
   }
@@ -20,29 +20,19 @@ class Filters extends Component {
     this.setState({
       selectedYearButton :event.target.dataset.value
     });
-    this.props.fetchSelectedYearData(event.target.dataset.value);
-    this.setState({
-      selectedLandingToggle :"",
-      selectedLaunchToggle:""
-    });
-    
-    
+    this.props.fetchSelectedYearData(event.target.dataset.value,this.state.selectedLandingToggle,this.state.selectedLaunchToggle); 
   }
   launchFilterClicked(event) {
-    this.props.fetchSelectedLandingData(this.state.selectedLandingToggle,event.target.dataset.value);
-    this.setState({
-      selectedYearButton :""
-    });
+    this.props.fetchSelectedYearData(this.state.selectedYearButton,this.state.selectedLandingToggle,event.target.dataset.value);
+
     this.setState({
       selectedLaunchToggle :event.target.dataset.value
     });
     
   }
   landingFilterClicked(event) {
-    this.props.fetchSelectedLandingData(event.target.dataset.value,this.state.selectedLaunchToggle);
-    this.setState({
-      selectedYearButton :""
-    });
+    this.props.fetchSelectedYearData(this.state.selectedYearButton,event.target.dataset.value,this.state.selectedLaunchToggle);
+
     this.setState({
       selectedLandingToggle :event.target.dataset.value
     });

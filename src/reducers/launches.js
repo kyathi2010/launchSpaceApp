@@ -1,9 +1,10 @@
-const launchData = (state = [] , action) => {
+const prevState = {
+    isLoading : false
+}
+const launchData = (state = prevState , action) => {
 
     switch(action.type) {
         case 'FETCH_DATA_SUCCESS':
-            
-            console.log("entered");
             return action.payload.launchData
         default:
             return state

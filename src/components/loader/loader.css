@@ -1,0 +1,14 @@
+.loader {
+  background: none;
+  display: none;
+  width: 200px;
+  height: 200px;
+}
+@media only screen and (min-width: 1024px) {
+  .loader {
+    display: block;
+    position: fixed;
+    top: 25%;
+    left: 50%;
+  }
+}

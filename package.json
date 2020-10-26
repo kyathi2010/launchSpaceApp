@@ -24,8 +24,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig":{
-    "extends":"react-app"
+  "eslintConfig": {
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [
@@ -47,6 +47,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "create-react-component-folder": "^0.3.4"
+    "create-react-component-folder": "^0.3.4",
+    "react-unit-test-generator": "^1.11.0"
   }
 }
