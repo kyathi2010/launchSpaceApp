@@ -10,7 +10,7 @@ class Home extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <b>SpaceX Launch Programs</b>
+          <b>SpaceX Launch Programssss</b>
         </header>
         <Filters />
         <Launches />

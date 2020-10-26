@@ -1,4 +1,5 @@
 {
+  "homepage": "http://kyathi2010.github.io/launchSpaceApp",
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
@@ -22,7 +23,9 @@
     "start": "react-scripts start",
     "build": "eslint ./src/*.js && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,6 +51,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "create-react-component-folder": "^0.3.4",
+    "gh-pages": "^3.1.0",
     "react-unit-test-generator": "^1.11.0"
   }
 }
