@@ -1,0 +1,53 @@
+.filterContainer {
+  background: #fff;
+  margin: 10px 15px;
+  padding-bottom: 70px;
+}
+.launchYear {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.launchYear p{
+    width: 150px;
+    margin: auto;
+    border-bottom: solid 1px #80808040;
+}
+a {
+    width: 30%;
+    margin-left: 10%;
+    margin-bottom: 15px;
+    background: #b9efb9;
+    border:none;
+    border-radius: 3px;
+    padding: 4px;
+    text-decoration: none;
+    color: #000;
+    display:inline-block;
+    text-align: center;
+}
+.selectedYear {
+    background:#3ab53a;
+    border: none;
+}
+a:active{
+  color: #000;
+  border: none;
+}
+.filterHeading {
+  margin: 5px;
+  display: block;
+}
+
+@media only screen and (min-width: 700px) {
+  .filterContainer {
+    width: 23%;
+    margin-left: 1%;
+    margin-right: 1%;
+    display: inline-block;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .filterContainer {
+    width: 18%;
+  }
+}

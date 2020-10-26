@@ -1,0 +1,33 @@
+
+.tiles {
+    background: #fff;
+    padding: 15px;
+    margin: 10px 15px;
+}
+img {
+    background-color: #80808040;
+    width: 100%;
+}
+@media only screen and (min-width: 700px) {
+    .launchContainer {
+        width: 75%;
+        display:inline-block;
+        vertical-align:top;
+    }
+    .tiles {
+        width: 42%;
+        display:inline-block;
+        margin-right: 2%;
+        margin-left: 0;
+        vertical-align: bottom;
+        min-height: 410px;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .launchContainer {
+        width: 80%;
+    }
+    .tiles {
+        width: 19%;
+    }
+}

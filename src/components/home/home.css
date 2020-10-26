@@ -1,0 +1,17 @@
+.App-header {
+    margin-left: 10px;
+    padding-top: 10px;
+    display:block;
+}
+footer {
+    text-align: center;
+}
+@media only screen and (min-width: 700px) {
+    .App-header {
+        margin-left: 1%;
+    }
+    .developerName {
+        display:inline-block;
+    }
+  }
+  
